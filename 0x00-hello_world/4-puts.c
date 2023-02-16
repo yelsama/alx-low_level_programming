@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*
+/**
  * this is main description
 */
 int	main(void)
