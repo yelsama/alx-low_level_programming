@@ -11,7 +11,7 @@ int	main(void)
 	while (c <= 'f')
 	{
 		putchar(c++);
-		if (c > '9')
+		if (c == '9' + 1)
 			c = 'a';
 	}
 	putchar('\n');
