@@ -9,12 +9,12 @@ int print_sign(int n)
 {
 	if (n > 0)
 	{
-		puthchar('+');
+		putchar('+');
 		return (1);
 	}
 	if (n < 0)
 	{
-		putcahr('-');
+		putchar('-');
 		return (-1);
 	}
 	putchar ('0');
