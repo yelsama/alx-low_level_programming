@@ -5,6 +5,7 @@
  *
  * Return: 1 if lower case char found.
  * 0 otherwise
+ * @c: input character
  */
 int _islower(char c)
 {
