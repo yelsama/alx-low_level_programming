@@ -4,7 +4,7 @@
  * print_to_98  - check the code
  * @n: the number to print from
  */
-void print_sign(int n)
+void print_to_98(int n)
 {
 	while (n != 98)
 	{
