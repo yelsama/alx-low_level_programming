@@ -4,25 +4,24 @@
  * print_diagonal - check the code
  * @n: number of times spaces should be printed
  */
-void  print_diagonal(int n)
+void print_diagonal(int n)
 {
-	int	i;
-	int	j;
+	int len, space;
 
-	j = -1;
-	if (n < 1)
+	if (n > 0)
 	{
-		_putchar('$');
-		_putchar('\n');
-		return ;
+		for (len = 0; len < n; len++)
+		{
+			for (space = 0; space < len; space++)
+				_putchar(' ');
+			_putchar('\\');
+
+			if (len == n - 1)
+				continue;
+
+			_putchar('\n');
+		}
 	}
-	while (++j < n)
-	{
-		i = -1;
-		while(++i < j)
-			_putchar(' ');
-		_putchar('\\');
-		_putchar('$');
-		_putchar('\n');
-	}
+
+	_putchar('\n');
 }
