@@ -2,7 +2,7 @@
 
 /**
  * print_diagonal - check the code
- * @n: number of times spaces should be printed
+ * @n: number of times spaces printed
  */
 void  print_diagonal(int n)
 {
@@ -16,8 +16,8 @@ void  print_diagonal(int n)
 		while(++i < j)
 			_putchar(' ');
 		_putchar('\\');
-		if (j != n - 1)
-			_putchar('\n');
+		_putchar('\n');
 	}
-	_putchar('\n');
+	if (n < 1)
+		_putchar('\n');
 }
