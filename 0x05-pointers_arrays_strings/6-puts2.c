@@ -4,7 +4,7 @@
  * _puts - check the code
  * @str: a string to be printed
  */
-void	putss(char *str)
+void	puts2(char *str)
 {
 	while (str && *str)
 	{
