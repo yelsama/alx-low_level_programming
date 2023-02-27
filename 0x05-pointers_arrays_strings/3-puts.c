@@ -6,6 +6,6 @@
  */
 void	_puts(char *str)
 {
-	while (str)
+	while (str && *str)
 		write(1, str++, 1);
 }
