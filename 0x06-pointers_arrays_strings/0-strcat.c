@@ -14,11 +14,15 @@ char	*_strcat(char *dest, char *src)
 	if (!dest || !src)
 		return (NULL);
 	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
+	n = 0;
+	while (dest[i])
 		i++;
+	while (src[n])
+	{
+		dest[i] = src[n];
+		i++;
+		n++;
 	}
-	dest[i] = src[i];
+	dest[i] = src[n];
 	return (dest);
 }
