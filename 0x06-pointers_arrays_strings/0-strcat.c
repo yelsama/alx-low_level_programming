@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * rev_string - check the code
+ * _strcat - check the code
  * @dest: a placr to copy
  * @src: place to take string from
  * Return: the destenation
@@ -12,7 +12,7 @@ char	*_strcat(char *dest, char *src)
 	int	n;
 
 	if (!dest || !src)
-		return (NULL);
+		return (0);
 	i = 0;
 	n = 0;
 	while (dest[i])
