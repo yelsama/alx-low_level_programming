@@ -10,7 +10,7 @@ char	*_strstr(char *haystack, char *needle)
 {
 	char	*hsp;
 	char	*nep;
-	size_t	i, m, nl;
+	int		i, m, nl;
 
 	hsp = (char *)haystack;
 	nep = (char *)needle;
