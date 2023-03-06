@@ -4,7 +4,7 @@
  * _strchr - check the code
  * @s: string to set
  * @c: character to find in string
- * Return: poiter to the char
+ * Return: pointer to the char
  */
 char	*_strchr(char *s, char c)
 {
@@ -14,5 +14,7 @@ char	*_strchr(char *s, char c)
 			return (s);
 		s++;
 	}
+	if (*s == c)
+		return (s);
 	return (0);
 }
