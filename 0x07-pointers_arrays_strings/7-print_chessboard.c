@@ -10,7 +10,7 @@ void	print_chessboard(char (*a)[8])
 	int	n;
 
 	i = -1;
-	while (a[++i])
+	while (a[++i] && i < 8)
 	{
 		n = -1;
 		while (a[i][++n])
