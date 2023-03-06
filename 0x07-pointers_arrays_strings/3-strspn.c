@@ -8,14 +8,24 @@
  */
 unsigned int	_strspn(char *s, char *accept)
 {
-    unsigned int count = 0;
-    char *p = s;
-    while (*p != '\0') {
-        if (strchr(accept, *p) == NULL) {
-            break;
-        }
-        count++;
-        p++;
-    }
-    return count;
+	unsigned int	i;
+	char			*tmp;
+	int				flag;
+
+	i = 0;
+	while (s[i])
+	{
+		tmp = accept;
+		flag = 0;
+		while (*tmp && !flag)
+		{
+			if (*tmp == s[i])
+				flag = 1;
+			tmp++;
+		}
+		if (!flag)
+			return (i);
+		i++;
+	}
+	return (i);
 }
