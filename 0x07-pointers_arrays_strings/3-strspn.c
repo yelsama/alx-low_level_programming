@@ -13,6 +13,8 @@ unsigned int	_strspn(char *s, char *accept)
 	int				flag;
 
 	i = 0;
+	if (!s || !accept)
+		return (0);
 	while (s[i])
 	{
 		tmp = accept;
