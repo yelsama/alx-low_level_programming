@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strchar - check the code
+ * _strchr - check the code
  * @s: string to set
  * @c: character to find in string
  * Return: poiter to the char
