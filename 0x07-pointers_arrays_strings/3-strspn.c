@@ -13,8 +13,6 @@ unsigned int	_strspn(char *s, char *accept)
 	int				flag;
 
 	i = 0;
-	if (!s || !accept)
-		return (0);
 	while (s[i])
 	{
 		tmp = accept;
@@ -30,4 +28,16 @@ unsigned int	_strspn(char *s, char *accept)
 		i++;
 	}
 	return (i);
+}
+
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char s[] = "hello world";
+    char accept[] = "helo w";
+    unsigned int count = _strspn(s, accept);
+    printf("The initial segment of '%s' that consists entirely of characters from '%s' has length %u.\n", s, accept, count);
+	count = strspn(s, accept);
+    printf("The initial segment of '%s' that consists entirely of characters from '%s' has length %u.\n", s, accept, count);
+    return 0;
 }
