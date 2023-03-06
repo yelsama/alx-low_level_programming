@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strspn - check the code
+ * _strpbrk - check the code
  * @s: string to to span
  * @accept: set of strings to look at
  * Return: pointer for similar one
