@@ -7,18 +7,23 @@
  */
 int	_sqrt_recursion(int n)
 {
-	int	i;
-	int	m;
-
-	i = 0;
-	m = 0;
-	while (i < 46341 && m < n)
-	{
-		m = i * i;
-		if (m == n)
-			return (i);
-		i++;
-	}
-	return (0);
-
+        return -1; // Error: square root of a negative number is not defined
+    }
+    if (n == 0 || n == 1) {
+        return n; // Base case: the square root of 0 and 1 is itself
+    }
+    int low = 0, high = n;
+    while (low <= high) {
+        int mid = (low + high) / 2;
+        int square = mid * mid;
+        if (square == n) {
+            return mid;
+        } else if (square < n) {
+            low = mid + 1;
+        } else {
+            high = mid - 1;
+        }
+    }
+    // If the loop terminates, the floor of the square root of n is the value of high
+    return high;
 }
