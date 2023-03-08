@@ -7,6 +7,7 @@
  */
 int	_sqrt_recursion(int n)
 {
+	 if (n < 0) {
         return -1; // Error: square root of a negative number is not defined
     }
     if (n == 0 || n == 1) {
