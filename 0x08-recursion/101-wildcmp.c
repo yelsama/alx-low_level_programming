@@ -51,7 +51,7 @@ int	test_strings(char *s1, char *s2, int *i, int *j)
 		set_balance(s1, s2, i, j);
 		return (test_strings(s1, s2, i, j));
 	}
-	if (s1[*i] != s2[*j])
+	if (s1[*i] != s2[*j] && s2[*j] != '*')
 		return (0);
 	return (1);
 }
@@ -71,7 +71,7 @@ int	wildcmp(char *s1, char *s2)
 		return (0);
 	i = 0;
 	j = 0;
-	if (*s1 != *s2 && *s1 && *s2 != '*')
+	if (*s1 != *s2 && *s2 != '*')
 		return (0);
 	return (test_strings(s1, s2, &i, &j));
 }
