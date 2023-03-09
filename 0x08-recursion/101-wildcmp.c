@@ -44,13 +44,13 @@ int	test_strings(char *s1, char *s2, int *i, int *j)
 		*j += 1;
 		return (test_strings(s1, s2, i, j));
 	}
+	else if (s1[*i] != s2[*j] && s2[*j] != '*')
+		return (0);
 	else if (s2[*i] == '*')
 	{
 		set_balance(s1, s2, i, j);
 		return (test_strings(s1, s2, i, j));
 	}
-	else if (s1[*i] != s2[*j] && s2[*j] != '*')
-		return (0);
 	return (1);
 }
 
