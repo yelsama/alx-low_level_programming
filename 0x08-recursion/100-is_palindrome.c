@@ -7,7 +7,7 @@
  * @right: right side index
  * Return: 1 plindrome, otherwise 0
  */
-int	test_plindrome(char *s, int left, int right)
+int	test_palindrome(char *s, int left, int right)
 {
 	if (left >= right)
 		return (1);
