@@ -83,8 +83,6 @@ int	wildcmp(char *s1, char *s2)
 	int	i;
 	int	j;
 
-	if (!s1 && !s2)
-		return (0);
 	i = 0;
 	j = 0;
 	if (*s1 != *s2 && *s2 != '*')
