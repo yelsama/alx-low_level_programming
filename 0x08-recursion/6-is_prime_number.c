@@ -5,24 +5,13 @@
  * @nb: given number to get square root
  * Return: 1 if prime, otherwise 0
  */
-int	ft_is_prime(int nb)
+int	ft_is_prime(int *nb, int test)
 {
-	int	n;
-
-	n = nb - 1;
-	if (nb == 2)
+	if (test > *nb / 2)
 		return (1);
-	if (nb % 2 == 0)
+	if (*nb % test == 0)
 		return (0);
-	while (n > 0)
-	{
-		if (nb % n == 0)
-			break ;
-		n--;
-	}
-	if (n == 1)
-		return (1);
-	return (0);
+	return (ft_is_prime(nb, test + 1));
 }
 
 /**
@@ -36,5 +25,5 @@ int	is_prime_number(int n)
 		return (1);
 	if (n % 2 == 0 || n <= 0)
 		return (0);
-	return (ft_is_prime(n));
+	return (ft_is_prime(&n, 2));
 }
