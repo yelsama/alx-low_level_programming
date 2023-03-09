@@ -53,7 +53,7 @@ int	test_strings(char *s1, char *s2, int *i, int *j)
 	}
 	if (s1[*i] != s2[*j])
 		return (0);
-	return (0);
+	return (1);
 }
 
 /**
