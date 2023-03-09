@@ -10,7 +10,7 @@
 void	set_last_s1_to_s2(char *s1, char c, int *i, int p)
 {
 	if (!s1[*i + p])
-		return ;
+		return;
 	if (s1[*i + p] == c)
 		*i += p;
 	set_last_s1_to_s2(s1, c, i, p + 1);
