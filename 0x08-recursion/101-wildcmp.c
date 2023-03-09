@@ -1,6 +1,22 @@
 #include "main.h"
 
 /**
+ * set_last_s1_to_s2 - check the code
+ * @s1: string to search in
+ * @c: character to find
+ * @i: string index
+ * @p: posiple addition to index
+ */
+void	set_last_s1_to_s2(char *s1, char c, int *i, int p)
+{
+	if (!s1[*i + p])
+		return ;
+	if (s1[*i + p] == c)
+		*i += p;
+	set_last_s1_to_s2(s1, c, i, p + 1);
+}
+
+/**
  * set_balance - check the code
  * @s1: first string
  * @s2: second string
@@ -24,6 +40,8 @@ void	set_balance(char *s1, char *s2, int *i, int *j)
 		*i += 1;
 		set_balance(s1, s2, i, j);
 	}
+	if (s1[*i] == s2[*j])
+		set_last_s1_to_s2(s1, s2[*j], i, 1);
 }
 
 /**
@@ -65,6 +83,8 @@ int	wildcmp(char *s1, char *s2)
 	int	i;
 	int	j;
 
+	if (!s1 && !s2)
+		return (0);
 	i = 0;
 	j = 0;
 	if (*s1 != *s2 && *s2 != '*')
