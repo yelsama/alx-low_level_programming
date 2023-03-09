@@ -19,7 +19,7 @@ void	set_balance(char *s1, char *s2, int *i, int *j)
 		*i += 1;
 		set_balance(s1, s2, i, j);
 	}
-	if (s1[*i] && s2[*j] && s1[*i] != s2[*j])
+	if (s1[*i] && s1[*i] != s2[*j])
 	{
 		*i += 1;
 		set_balance(s1, s2, i, j);
@@ -60,7 +60,7 @@ int	wildcmp(char *s1, char *s2)
 	int	i;
 	int	j;
 
-	if (!s1 || !s2)
+	if (!s1 && !s2)
 		return (0);
 	i = 0;
 	j = 0;
