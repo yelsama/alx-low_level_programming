@@ -38,6 +38,12 @@ int	test_strings(char *s1, char *s2, int *i, int *j)
 {
 	if (!s1[*i] && !s2[*j])
 		return (1);
+	if (s1[*i] == s2[*j])
+	{
+		*i += 1;
+		*j += 1;
+		return (test_strings(s1, s2, i, j));
+	}
 	if (s1[*i] != s2[*j] && s2[*j] != '*')
 		return (0);
 	if (s2[*i] == '*')
@@ -47,9 +53,6 @@ int	test_strings(char *s1, char *s2, int *i, int *j)
 	}
 	if (s1[*i] != s2[*j])
 		return (0);
-	*i += 1;
-	*j += 1;
-	return (test_strings(s1, s2, i, j));
 }
 
 /**
