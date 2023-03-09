@@ -32,8 +32,6 @@ int	ft_is_prime(int nb)
  */
 int	is_prime_number(int n)
 {
-	int	m;
-
 	if (n == 2)
 		return (1);
 	if (n % 2 == 0 || n <= 0)
