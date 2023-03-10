@@ -104,7 +104,7 @@ int	main(int argc, char **argv)
 		n = -1;
 		while (argv[i][++n])
 			if (!_isdigit(argv[i][n]))
-				return(printf("Error\n"), 1);
+				return (printf("Error\n"), 1);
 		rslt += _atoi(argv[i]);
 	}
 	printf("%d\n", rslt);
