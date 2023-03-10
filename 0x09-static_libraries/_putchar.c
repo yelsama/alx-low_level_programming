@@ -8,6 +8,7 @@
 int	_putchar(int c)
 {
 	unsigned char	n;
+
 	n = c;
 	return (write(1, &n, 1));
 }
