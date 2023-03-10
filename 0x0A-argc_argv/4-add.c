@@ -107,6 +107,6 @@ int	main(int argc, char **argv)
 				return(printf("Error\n"), 1);
 		rslt += _atoi(argv[i]);
 	}
-	printf("%d\n");
+	printf("%d\n", rslt);
 	return (0);
 }
