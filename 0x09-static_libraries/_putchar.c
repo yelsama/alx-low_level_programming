@@ -10,5 +10,5 @@ int	_putchar(int c)
 	unsigned char	n;
 
 	n = c;
-	return (1);
+	return (n);
 }

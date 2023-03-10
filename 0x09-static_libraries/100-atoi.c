@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * _atoi  - check the code
  * @str: number given in ascii
