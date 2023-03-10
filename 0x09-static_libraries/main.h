@@ -21,6 +21,6 @@ char			*_strpbrk(char *s, char *accept);
 char			*_strstr(char *haystack, char *needle);
 int 			_abs(int n);
 char			*_strcpy(char *dest, char *src);
-int				_putchar(int c);
+int			_putchar(int c);
 
 #endif
