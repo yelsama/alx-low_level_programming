@@ -5,7 +5,7 @@
  * @c: the character to be printed as ascii
  * Return: 1 when writing on std output
  */
-int	_putchar(int c)
+int	_putchar(char c)
 {
 	unsigned char	n;
 
