@@ -38,18 +38,3 @@ char	*str_concat(char *s1, char *s2)
 	new[i] = '\0';
 	return (new);
 }
-
-int main(void)
-{
-    char *s;
-
-    s = str_concat(NULL, "Holber");
-    if (s == NULL)
-    {
-        printf("failed\n");
-        return (1);
-    }
-    printf("%s\n", s);
-    free(s);
-    return (0);
-}
