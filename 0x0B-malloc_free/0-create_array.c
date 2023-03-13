@@ -19,6 +19,5 @@ char	*create_array(unsigned int size, char c)
 	i = -1;
 	while (++i < (int)size)
 		str[i] = c;
-	str[--i] = 0;
 	return (str);
 }
