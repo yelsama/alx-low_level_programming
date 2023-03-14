@@ -85,7 +85,7 @@ char **strtow(char *str)
 		{
 			new[++words] = malloc(sizeof(char) * (end + 1 - start));
 			if (!new[words])
-				return(sanitise(new, words), NULL);
+				return (sanitise(new, words), NULL);
 			end = -1;
 			while (start <= i)
 				new[words][++end] = str[start++];
