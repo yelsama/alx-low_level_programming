@@ -88,7 +88,7 @@ char **strtow(char *str)
 				return(sanitise(new, words), NULL);
 			end = -1;
 			while (start <= i)
-				new[words][++end] = str[start++]
+				new[words][++end] = str[start++];
 			new[words][++end] = '\0';
 		}
 	}
