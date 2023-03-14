@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * sanitise - to free memory when error occurs
+ * free_grid - to free  2d int array
  * @grid: array to be freed;
  * @height: index of created elements
  */
