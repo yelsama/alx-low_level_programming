@@ -30,7 +30,6 @@ static int	count_words(char *str)
 
 	i = -1;
 	words = 0;
-	str = *str;
 	while (*str && *str == ' ')
 		str++;
 	*str = str;
