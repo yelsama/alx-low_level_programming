@@ -43,7 +43,7 @@ static int	count_words(char *str)
 				break;
 		}
 	}
-	if (!words && i > 0)
+	if (i > 0 && str[i -1] != ' ')
 		words++;
 	return (words);
 }
@@ -64,6 +64,8 @@ char **strtow(char *str)
 	if (!str)
 		return (NULL);
 	words = count_words(str);
+	printf("I got %d words\n", words);
+	exit(0);
 	new = malloc(sizeof(char *) * (words + 1));
 	if (!new)
 		return (NULL);
@@ -90,4 +92,39 @@ char **strtow(char *str)
 		}
 	}
 	return (new);
+}
+
+/**
+ * print_tab - Prints an array of string
+ * @tab: The array to print
+ *
+ * Return: nothing
+ */
+void print_tab(char **tab)
+{
+    int i;
+
+    for (i = 0; tab[i] != NULL; ++i)
+    {
+        printf("%s\n", tab[i]);
+    }
+}
+
+/**
+ * main - check the code for ALX School students.
+ *
+ * Return: 1 if an error occurred, 0 otherwise
+ */
+int main(void)
+{
+    char **tab;
+
+    tab = strtow("");
+    if (tab == NULL)
+    {
+        printf("Failed\n");
+        return (1);
+    }
+    print_tab(tab);
+    return (0);
 }
