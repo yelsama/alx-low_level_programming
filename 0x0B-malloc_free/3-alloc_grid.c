@@ -15,6 +15,7 @@ static void	sanitise(int **new, int i)
 	while (i >= 0)
 		free(new[i--]);
 	free(new);
+	new = NULL;
 }
 
 /**
