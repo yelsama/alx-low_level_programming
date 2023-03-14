@@ -43,7 +43,7 @@ static int	count_words(char *str)
 				break;
 		}
 	}
-	if (i > 0 && str[i -1] != ' ')
+	if (i > 0 && str[i - 1] != ' ')
 		words++;
 	return (words);
 }
@@ -78,7 +78,7 @@ char **strtow(char *str)
 			i++;
 		if (i > 0 && ++j < words)
 		{
-			new[j] = malloc (sizeof(char) * (i + 1));
+			new[j] = malloc(sizeof(char) * (i + 1));
 			if (!new[j])
 				return (sanitise(new, j), NULL);
 			i = -1;
