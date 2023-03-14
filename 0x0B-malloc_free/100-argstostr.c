@@ -23,7 +23,7 @@ char	*argstostr(int ac, char **av)
 		while (av[i][++n])
 			t_n++;
 	}
-	new = malloc(sizeof(char) * (t_n + ac));
+	new = malloc(sizeof(char) * (t_n + ac + 1));
 	if (!new)
 		return (NULL);
 	i = -1;
@@ -33,8 +33,8 @@ char	*argstostr(int ac, char **av)
 		n = -1;
 		while (av[i][++n])
 			new[++t_n] = av[i][n];
-		new[++t_n] = ' ';
+		new[++t_n] = '\n';
 	}
-	new[t_n] = 0;
+	new[++t_n] = 0;
 	return (new);
 }
