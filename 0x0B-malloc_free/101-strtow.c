@@ -57,74 +57,39 @@ char **strtow(char *str)
 {
 	char	**new;
 	int		words;
-	int		start;
-	int		end;
 	int		i;
+	int		j;
 
 	if (!str)
 		return (NULL);
+	new = NULL;
 	words = count_words(str);
-	printf("I got %d words\n", words);
-	exit(0);
 	new = malloc(sizeof(char *) * (words + 1));
 	if (!new)
 		return (NULL);
 	new[words] = NULL;
-	words = -1;
-	i = -1;
-	while (str[++i])
+	j = -1;
+	while (*str && j < words)
 	{
-		while (str[i] && str[i] == ' ')
-			i++;
-		start = i;
+		while (*str && *str == ' ')
+			str++;
+		i = 0;
 		while (str[i] && str[i] != ' ')
 			i++;
-		end = i;
-		if (end > start)
+		if (i > 0 && ++j < words)
 		{
-			new[++words] = malloc(sizeof(char) * (end + 1 - start));
-			if (!new[words])
-				return (sanitise(new, words), NULL);
-			end = -1;
-			while (start <= i)
-				new[words][++end] = str[start++];
-			new[words][++end] = '\0';
+			new[j] = malloc (sizeof(char) * (i + 1));
+			if (!new[j])
+				return (sanitise(new, j), NULL);
+			i = -1;
+			while (*str && *str != ' ')
+			{
+				new[j][++i] = *str;
+				str++;
+			}
+			new[j][++i] = '\0';
 		}
 	}
+	new[++j] = NULL;
 	return (new);
-}
-
-/**
- * print_tab - Prints an array of string
- * @tab: The array to print
- *
- * Return: nothing
- */
-void print_tab(char **tab)
-{
-    int i;
-
-    for (i = 0; tab[i] != NULL; ++i)
-    {
-        printf("%s\n", tab[i]);
-    }
-}
-
-/**
- * main - check the code for ALX School students.
- *
- * Return: 1 if an error occurred, 0 otherwise
- */
-int main(void)
-{
-    char **tab;
-
-    tab = strtow("");
-    if (tab == NULL)
-    {
-        printf("Failed\n");
-        return (1);
-    }
-    print_tab(tab);
-    return (0);
 }
