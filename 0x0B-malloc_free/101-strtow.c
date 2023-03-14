@@ -5,7 +5,7 @@
  * @new: array to be freed;
  * @i: index of created elements
  */
-static void	sanitise(int **new, int i)
+static void	sanitise(char **new, int i)
 {
 	if (i == 0)
 	{
