@@ -23,26 +23,25 @@ static void	sanitise(char **new, int i)
  * @str: given array;
  * Return: number of words in string
  */
-static int	count_words(char **str)
+static int	count_words(char *str)
 {
 	int		i;
 	int		words;
-	char	*tmp;
 
 	i = -1;
 	words = 0;
-	tmp = *str;
-	while (*tmp && *tmp == ' ')
-		tmp++;
-	*str = tmp;
-	while (tmp[++i])
+	str = *str;
+	while (*str && *str == ' ')
+		str++;
+	*str = str;
+	while (str[++i])
 	{
-		if (tmp[i] == ' ')
+		if (str[i] == ' ')
 		{
 			words++;
-			while (tmp[i] && tmp[i] == ' ')
+			while (str[i] && str[i] == ' ')
 				i++;
-			if (!tmp[i])
+			if (!str[i])
 				break;
 		}
 	}
@@ -66,7 +65,7 @@ char **strtow(char *str)
 
 	if (!str)
 		return (NULL);
-	words = count_words(&str);
+	words = count_words(str);
 	new = malloc(sizeof(char *) * (words + 1));
 	if (!new)
 		return (NULL);
