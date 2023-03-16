@@ -10,7 +10,7 @@ void	*_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned char	*new;
 	unsigned int	i;
-	unsigned int			limit;
+	unsigned int	limit;
 
 	limit = nmemb * size;
 	if (!limit)
