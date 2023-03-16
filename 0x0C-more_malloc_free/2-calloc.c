@@ -9,10 +9,12 @@
 void	*_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned char	*new;
-	int				i;
-	int				limit;
+	unsigned int	i;
+	unsigned int			limit;
 
 	limit = nmemb * size;
+	if (!limit)
+		return (NULL);
 	new = malloc(limit);
 	if (!new)
 		return (NULL);
