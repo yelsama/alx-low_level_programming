@@ -23,10 +23,16 @@ char	*string_nconcat(char *s1, char *s2, unsigned int n)
 			j++;
 	if (n >= j)
 		n = j;
-	new = realloc(s1, (i + n +1));
+	new = malloc(sizeof(char) * (i + n +1));
 	if (!new)
 		return (NULL);
+	i = -1;
 	j = -1;
+	if (s1)
+		while (s1[++i])
+			new[i] = s1[i];
+	if (!s1)
+		i = 0;
 	if (s2)
 		while (s2[++j])
 			new[i++] = s2[j];
