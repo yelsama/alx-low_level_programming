@@ -3,7 +3,7 @@
 /**
  * _calloc - set all allcation to zero
  * @nmemb: number of units
- * @ize: unitsize
+ * @size: unitsize
  * Return: a pointer to the new memory allocated
  */
 void	*_calloc(unsigned int nmemb, unsigned int size)
