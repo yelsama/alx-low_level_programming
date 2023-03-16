@@ -27,7 +27,7 @@ void	*_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (ptr);
 	i = -1;
 	if (ptr)
-		while (++i < old_size)
+		while (++i < old_size && i < new_size)
 			new[i] = tmp[i];
 	if (ptr)
 		free(ptr);
