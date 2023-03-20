@@ -1,6 +1,4 @@
-#include "main.h"
 #include "dog.h"
-
 /**
  * init_dog - see code
  * @d: struct to fill
