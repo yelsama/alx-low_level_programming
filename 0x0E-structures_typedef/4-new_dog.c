@@ -1,9 +1,11 @@
 #include "dog.h"
+
 /**
  * new_dog - see code
  * @name: an argue
  * @age: an argue
  * @owner: an argue
+ * Return: new struct dog
  */
 dog_t	*new_dog(char *name, float age, char *owner)
 {
