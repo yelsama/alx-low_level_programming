@@ -1,4 +1,5 @@
 #include "dog.h"
+
 /**
  * init_dog - see code
  * @d: struct to print
