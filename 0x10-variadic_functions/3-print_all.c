@@ -8,10 +8,9 @@ void	print_all(const char * const format, ...)
 {
 	va_list			ap;
 	char			*tmp;
+	char			nil[] = "(nil)";
 	int				n, i, j;
 
-	if (!format)
-		return;
 	n = 0;
 	i = -1;
 	j = 0;
@@ -36,6 +35,8 @@ void	print_all(const char * const format, ...)
 			break;
 		case 's':
 			tmp = va_arg(ap, char *);
+			if (!tmp)
+				tmp = nil;
 			printf("%s", tmp);
 			break;
 		default:
