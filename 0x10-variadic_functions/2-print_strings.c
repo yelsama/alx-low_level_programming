@@ -28,7 +28,7 @@ void	print_strings(const char *separator, const unsigned int n, ...)
 			if (!tmp)
 				printf("%s(nil)", separator);
 			else
-				printf("%s%d", separator, tmp);
+				printf("%s%s", separator, tmp);
 		}
 		i++;
 	}
