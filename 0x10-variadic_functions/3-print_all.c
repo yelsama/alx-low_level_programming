@@ -17,7 +17,7 @@ void	print_all(const char * const format, ...)
 	while (format[n])
 		n++;
 	va_start(ap, format);
-	while (++i < n)
+	while (++i < n && i < 10)
 	{
 		if (j)
 			printf(", ");
