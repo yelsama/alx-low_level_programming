@@ -14,10 +14,10 @@ void	print_all(const char * const format, ...)
 	n = 0;
 	i = -1;
 	j = 0;
-	while (format[n])
+	while (format && format[n])
 		n++;
 	va_start(ap, format);
-	while (++i < n && i < 10)
+	while (++i < n)
 	{
 		if (j)
 			printf(", ");
