@@ -1,7 +1,7 @@
 #include "variadic_functions.h"
 
 /**
- * sum_them_all - submint all given intgers
+ * print_numbers - submint all given intgers
  * @separator: string to put bettween numbers
  * @n: number of given intgers
  */
