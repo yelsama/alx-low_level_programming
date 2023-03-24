@@ -8,7 +8,7 @@
  */
 int	main(int argc, char **argv)
 {
-	int	n1,n2;
+	int	n1, n2;
 	int	(*res)(int, int);
 
 	if (argc != 4)
@@ -20,6 +20,6 @@ int	main(int argc, char **argv)
 		return (printf("Error\n"), 99);
 	if ((res == op_div || res == op_mod) && n2 == 0)
 		return (printf("Error\n"), 100);
-	printf ("%d\n", res(n1, n2));
+	printf("%d\n", res(n1, n2));
 	return (0);
 }
