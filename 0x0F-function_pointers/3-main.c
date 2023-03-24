@@ -13,6 +13,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 4)
 		return (printf("Error\n"), 98);
+	res = NULL;
 	n1 = atoi(argv[1]);
 	n2 = atoi(argv[3]);
 	res = get_op_func(argv[2]);
