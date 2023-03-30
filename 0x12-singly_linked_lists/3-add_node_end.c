@@ -21,6 +21,11 @@ list_t	*add_node_end(list_t **head, const char *str)
 		i++;
 	new_tail->len = i;
 	trace = *head;
+	if (!trace)
+	{
+		*head = new_tail;
+		return (new_tail);
+	}
 	while (trace->next)
 		trace = trace->next;
 	trace->next = new_tail;
