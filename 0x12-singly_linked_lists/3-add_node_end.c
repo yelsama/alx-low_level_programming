@@ -20,14 +20,9 @@ list_t	*add_node_end(list_t **head, const char *str)
 	while (str && str[i])
 		i++;
 	new_tail->len = i;
-	if (!head)
-	{
-		head = &new_tail;
-		return (*head);
-	}
 	trace = *head;
 	while (trace->next)
 		trace = trace->next;
 	trace->next = new_tail;
-	return (*head);
+	return (new_tail);
 }
