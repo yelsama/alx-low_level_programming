@@ -20,5 +20,6 @@ list_t	*add_node(list_t **head, const char *str)
 		i++;
 	new_head->len = i;
 	new_head->next = *head;
+	*head = new_head;
 	return (new_head);
 }
