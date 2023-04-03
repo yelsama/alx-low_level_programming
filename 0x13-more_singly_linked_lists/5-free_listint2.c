@@ -27,5 +27,4 @@ void	free_listint2(listint_t **head)
 	catsh = *head;
 	_free_listint(catsh);
 	*head = NULL;
-	// head = NULL;
 }
