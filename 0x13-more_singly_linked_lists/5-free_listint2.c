@@ -23,5 +23,6 @@ void	free_listint2(listint_t **head)
 	if (!head)
 		return;
 	_free_listint(*head);
-	head = NULL;
+	*head = NULL;
+	// head = NULL;
 }
