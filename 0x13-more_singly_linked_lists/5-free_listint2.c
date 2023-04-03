@@ -20,9 +20,12 @@ void	_free_listint(listint_t *head)
  */
 void	free_listint2(listint_t **head)
 {
+	listint_t	*catsh;
+
 	if (!head)
 		return;
-	_free_listint(*head);
+	catsh = *head;
+	_free_listint(catsh);
 	*head = NULL;
 	// head = NULL;
 }
