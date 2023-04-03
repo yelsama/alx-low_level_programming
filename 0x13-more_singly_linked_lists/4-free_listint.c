@@ -5,7 +5,7 @@
  * @head: holds the pointer to the first element
  * Return: no thing
  */
-void	free_list(listint_t *head)
+void	free_listint(listint_t *head)
 {
 	if (!head)
 		return;
