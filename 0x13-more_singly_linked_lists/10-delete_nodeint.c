@@ -1,0 +1,32 @@
+#include "lists.h"
+
+/**
+ * delete_nodeint_at_index - check the code
+ * @head: holds the pointer to the first element
+ * @index: index to targeted node
+ * Return: address of new node;
+ */
+int	delete_nodeint_at_index(listint_t **head, unsigned int index)
+{
+	listint_t	*new_node;
+	listint_t	*tmp;
+	unsigned int	i;
+
+	if (!head)
+		return (NULL);
+	if (!(*head) && idx > 0)
+		return (NULL);
+	tmp = *head;
+	i = 0;
+	while (tmp && ++i < idx)
+		tmp = tmp->next;
+	if (i < idx)
+		return (NULL);
+	new_node = malloc(sizeof(listint_t));
+	if (!new_node)
+		return (NULL);
+	new_node->n = n;
+	new_node->next = tmp->next;
+	tmp->next = new_node;
+	return (new_node);
+}
