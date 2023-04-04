@@ -19,13 +19,10 @@ int	delete_nodeint_at_index(listint_t **head, unsigned int index)
 	while (tmp && ++i < index)
 		tmp = tmp->next;
 	to_del = tmp->next;
-	if (!index)
-	{
-		to_del = *head;
-		*head = to_del->next;
-	}
 	if (!to_del)
 		return (-1);
+	if (!index)
+		*head = to_del->next;
 	tmp->next = to_del->next;
 	free(to_del);
 	return (1);
