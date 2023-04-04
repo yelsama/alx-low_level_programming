@@ -23,8 +23,8 @@ int	delete_nodeint_at_index(listint_t **head, unsigned int index)
 	to_del = tmp->next;
 	if (!index)
 	{
-		*head = to_del->next;
 		to_del = *head;
+		*head = to_del->next;
 	}
 	if (!to_del)
 		return (-1);
