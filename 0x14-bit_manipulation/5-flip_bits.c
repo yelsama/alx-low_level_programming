@@ -3,7 +3,7 @@
 /**
  * flip_bits - prints binary
  * @n: number to be checked
- * @m: bit index to convert to one
+ * @m: to be flipped
  * Return: count of flip
  */
 unsigned int	flip_bits(unsigned long int n, unsigned long int m)
