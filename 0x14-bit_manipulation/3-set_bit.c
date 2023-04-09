@@ -1,21 +1,25 @@
 #include "main.h"
 
 /**
- * get_bit - prints binary
+ * set_bit - prints binary
  * @n: number to be checked
- * @index: bit index to investigate
- * Return: binary value of the bit
+ * @index: bit index to convert to one
+ * Return: status
  */
-int	get_bit(unsigned long int n, unsigned int index)
+int	set_bit(unsigned long int *n, unsigned int index)
 {
-	if (n == 0 && index == 0)
-		return (0);
-	while (index > 0 && n)
+	unsigned long int	mask;
+
+
+	if (!n)
+		return (-1);
+	mask = 1;
+
+	while (index > 0)
 	{
-		n = n >> 1;
+		mask = mask << 1;
 		index--;
 	}
-	if (!n && index)
-		return (-1);
-	return (n & 1);
+	*n = *n | mask;
+	return (1);
 }
