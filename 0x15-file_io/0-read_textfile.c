@@ -25,7 +25,7 @@ ssize_t	read_textfile(const char *filename, size_t letters)
 	while (++i < (int)letters)
 		bufr[i] = 0;
 	n = read(fd, bufr, letters);
-	close (fd);
+	close(fd);
 	if (n < 1)
 		return (free(bufr), 0);
 	n = write(1, bufr, n);
