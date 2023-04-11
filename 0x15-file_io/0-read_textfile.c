@@ -13,7 +13,7 @@ ssize_t	read_textfile(const char *filename, size_t letters)
 	int		i;
 	ssize_t	n;
 
-	if (!filename)
+	if (!filename || letters == 0)
 		return (0);
 	fd = open(filename, O_RDONLY);
 	if (fd < 1)
@@ -29,7 +29,8 @@ ssize_t	read_textfile(const char *filename, size_t letters)
 	if (n < 1)
 		return (free(bufr), 0);
 	n = write(1, bufr, n);
-	if (n < 1 || n != (ssize_t)letters)
+	if (n < 1)
 		return (free(bufr), 0);
 	return (free(bufr), n);
 }
+
