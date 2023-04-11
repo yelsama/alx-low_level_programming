@@ -58,15 +58,12 @@ int	main(int argc, char **argv)
 			break;
 		red = read(src_fd, buf, 1024);
 	}
-	if (red < 1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		return (close(src_fd), close(dst_fd), 98);
-	}
 	close_flag = close(src_fd);
 	if (close_flag < 0)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", src_fd);
 	if (close(dst_fd) < 0)
 		return (dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", dst_fd), 100);
+	if (close_flag < 0)
+		return (100);
 	return (close_flag);
 }
