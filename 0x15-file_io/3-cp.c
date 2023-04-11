@@ -67,7 +67,7 @@ int	main(int argc, char **argv)
 		red = read(src_fd, buf, 1024);
 	}
 	if (red < 0)
-		print_read_error(argv[1]);
+		return (print_read_error(argv[1]));
 	close_flag = close(src_fd);
 	if (close_flag < 0)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", src_fd);
