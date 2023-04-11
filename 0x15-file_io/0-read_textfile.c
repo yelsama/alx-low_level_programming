@@ -9,7 +9,7 @@
 ssize_t	read_textfile(const char *filename, size_t letters)
 {
 	int		fd;
-	char	bufr[letters];
+	char	*bufr;
 	int		i;
 	ssize_t	n;
 
@@ -19,14 +19,17 @@ ssize_t	read_textfile(const char *filename, size_t letters)
 	if (fd < 1)
 		return (0);
 	i = -1;
-	while (++i < letters)
+	bufr = malloc(sizeof(char) * letters);
+	if (!bufr)
+		return (close(fd), 0);
+	while (++i < (int)letters)
 		bufr[i] = 0;
 	n = read(fd, bufr, letters);
 	close (fd);
 	if (n < 1)
-		return (0);
+		return (free(bufr), 0);
 	n = write(1, bufr, n);
 	if (n < 1)
-		return (0);
-	return (n);
+		return (free(bufr), 0);
+	return (free(bufr), n);
 }
