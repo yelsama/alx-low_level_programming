@@ -5,6 +5,19 @@
 #include <stdlib.h>
 
 /**
+ * clear_buffer - check the code
+ * @buf: numbe of arguments passed
+ * Return: Nothing
+ */
+void	clear_buffer(char *buf)
+{
+	int	i = -1;
+
+	while (++i < 1024)
+		buf[i] = 0;
+}
+
+/**
  * main - check the code
  * @argc: numbe of arguments passed
  * @argv: arguments strings
@@ -30,9 +43,7 @@ int	main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		return (close(src_fd), 99);
 	}
-	i = -1;
-	while (++i < 1024)
-		buf[i] = 0;
+	clear_buffer(buf);
 	red = read(src_fd, buf, 1024);
 	while (red > 0)
 	{
@@ -42,9 +53,7 @@ int	main(int argc, char **argv)
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			return (close(src_fd), close(dst_fd), 99);
 		}
-		i = -1;
-		while (++i < 1024)
-			buf[i] = 0;
+		clear_buffer(buf);
 		if (red < 1024)
 			break;
 		red = read(src_fd, buf, 1024);
