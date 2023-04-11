@@ -4,6 +4,12 @@
 #include <sys/stat.h>
 #include <stdlib.h>
 
+/**
+ * main - check the code
+ * @argc: numbe of arguments passed
+ * @argv: arguments strings
+ * Return: 0 on total success
+ */
 int	main(int argc, char **argv)
 {
 	int		src_fd, dst_fd, i, red;
@@ -14,7 +20,10 @@ int	main(int argc, char **argv)
 		return (write(STDERR_FILENO, "Usage: cp file_from file_to\n", 28), 97);
 	src_fd = open(argv[1], O_RDONLY);
 	if (src_fd < 1)
-		return (dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), 98);
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		return (98);
+	}
 	dst_fd = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
 	if (dst_fd < 1)
 	{
