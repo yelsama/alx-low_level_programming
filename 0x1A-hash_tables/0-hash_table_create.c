@@ -6,7 +6,7 @@
  * hash_table_create - check the code
  *
  * @size: inted size for hash table
- * return: hash_table_t*
+ * Return: hash_table_t*
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
