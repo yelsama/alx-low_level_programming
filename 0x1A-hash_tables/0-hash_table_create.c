@@ -4,7 +4,7 @@
 
 /**
  * hash_table_create - check the code
- * 
+ *
  * @size: inted size for hash table
  * return: hash_table_t*
  */
