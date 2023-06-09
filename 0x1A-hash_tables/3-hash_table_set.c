@@ -2,7 +2,6 @@
 
 /**
  * hash_table_set - check the code
- * 
  * @ht: hash table you want to add or update
  * @key: second arg
  * @value: the value associated with the key
