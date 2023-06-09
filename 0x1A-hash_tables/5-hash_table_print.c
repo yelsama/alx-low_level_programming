@@ -21,12 +21,12 @@ void hash_table_print(const hash_table_t *ht)
 		tmp = (*ht).array[i];
 		while (tmp)
 		{
+			if (p_handle++)
+				printf(", ");
 			printf("'%s': '%s'", (*tmp).key, (*tmp).value);
 			tmp = (*tmp).next;
 		}
 		i++;
-		if ((*ht).array[i] && !p_handle++)
-			printf(", ");
 	}
 	printf("}\n");
 }
