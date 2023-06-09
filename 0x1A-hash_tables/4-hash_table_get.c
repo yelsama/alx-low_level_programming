@@ -3,7 +3,7 @@
 /**
  * hash_table_get - check the code
  * @ht: hash table pointer
- * @key: a key to find the element 
+ * @key: a key to find the element
  * Return: a vlue for a key or none
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
