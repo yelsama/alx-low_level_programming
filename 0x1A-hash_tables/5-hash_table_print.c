@@ -23,8 +23,9 @@ void hash_table_print(const hash_table_t *ht)
 			printf("'%s': '%s'", (*tmp).key, (*tmp).value);
 			tmp = (*tmp).next;
 		}
-		printf(", ");
 		i++;
+		if ((*ht).array[i])
+			printf(", ");
 	}
 	printf("}\n");
 }
