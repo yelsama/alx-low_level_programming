@@ -14,10 +14,10 @@ void hash_table_print(const hash_table_t *ht)
 
 	if (!ht)
 		return;
+	printf("{");
 	while (i < (*ht).size)
 	{
 		tmp = (*ht).array[i];
-		printf("{");
 		while (tmp)
 		{
 			printf("%s", (*tmp).value);
@@ -25,7 +25,7 @@ void hash_table_print(const hash_table_t *ht)
 			if (tmp)
 				printf(": ");
 		}
-		printf("}\n");
 		i++;
 	}
+	printf("}\n");
 }
