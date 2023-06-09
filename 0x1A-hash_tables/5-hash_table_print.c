@@ -24,7 +24,7 @@ void hash_table_print(const hash_table_t *ht)
 			tmp = (*tmp).next;
 		}
 		i++;
-		if ((*ht).array[i] && i > 1)
+		if ((*ht).array[i] && tmp)
 			printf(", ");
 	}
 	printf("}\n");
