@@ -87,7 +87,7 @@ void shash_table_print(const shash_table_t *ht)
 			if (p_handle++)
 				printf(", ");
 			printf("'%s': '%s'", (*tmp).key, (*tmp).value);
-			tmp = (*tmp).next;
+			tmp = (*tmp).snext;
 		}
 		i++;
 	}
