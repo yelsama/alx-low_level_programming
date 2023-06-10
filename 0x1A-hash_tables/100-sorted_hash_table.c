@@ -87,7 +87,7 @@ void shash_table_print(const shash_table_t *ht)
 			if (p_handle++)
 				printf(", ");
 			printf("'%s': '%s'", (*tmp).key, (*tmp).value);
-			tmp = (*tmp).snext;
+			tmp = (*tmp).next;
 		}
 		i++;
 	}
@@ -116,7 +116,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 			if (p_handle++)
 				printf(", ");
 			printf("'%s': '%s'", (*tmp).key, (*tmp).value);
-			tmp = (*tmp).snext;
+			tmp = (*tmp).next;
 		}
 	}
 	printf("}\n");
@@ -141,7 +141,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	{
 		if (!strcmp((*tmp).key, key))
 			return ((*tmp).value);
-		tmp = (*tmp).snext;
+		tmp = (*tmp).next;
 	}
 	return (NULL);
 }
