@@ -43,11 +43,11 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	new = malloc(sizeof(shash_node_t));
 	if (!new)
 		return (0);
+	i = key_index((const unsigned char *)key, (*ht).size);
 	(*new).key = strdup(key);
 	(*new).value = strdup(value);
 	(*new).next = (*ht).array[i];
 	(*new).snext = NULL;
-	i = key_index((const unsigned char *)key, (*ht).size);
 	tmp = (*ht).array[i];
 	while (tmp)
 	{
