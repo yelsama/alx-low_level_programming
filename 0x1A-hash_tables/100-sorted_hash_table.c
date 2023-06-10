@@ -73,6 +73,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 void shash_table_print(const shash_table_t *ht)
 {
 	shash_node_t *tmp;
+	shash_node_t *deep;
 	unsigned long int i = 0;
 	int	p_handle = 0;
 
@@ -84,9 +85,14 @@ void shash_table_print(const shash_table_t *ht)
 		tmp = (*ht).array[i];
 		while (tmp)
 		{
-			if (p_handle++)
-				printf(", ");
-			printf("'%s': '%s'", (*tmp).key, (*tmp).value);
+			deep = tmp;
+			while (deep)
+			{
+				if (p_handle++)
+					printf(", ");
+				printf("'%s': '%s'", (*deep).key, (*deep).value);
+				deep = (*deep).snext;
+			}
 			tmp = (*tmp).next;
 		}
 		i++;
