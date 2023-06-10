@@ -106,11 +106,11 @@ void shash_table_print_rev(const shash_table_t *ht)
 
 	if (!ht)
 		return;
-	i = (*ht).size - 1;
+	i = (*ht).size;
 	printf("{");
-	while (i >= 0)
+	while (i > 0)
 	{
-		tmp = (*ht).array[i];
+		tmp = (*ht).array[--i];
 		while (tmp)
 		{
 			if (p_handle++)
@@ -118,9 +118,6 @@ void shash_table_print_rev(const shash_table_t *ht)
 			printf("'%s': '%s'", (*tmp).key, (*tmp).value);
 			tmp = (*tmp).snext;
 		}
-		if (!i)
-			break;
-		i--;
 	}
 	printf("}\n");
 }
