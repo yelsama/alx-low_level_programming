@@ -36,7 +36,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
 	shash_node_t *new;
 	shash_node_t *tmp;
-	shash_node_t *deep;
 	unsigned long int i;
 
 	if (!key || key[0] == 0 || !value || !ht)
