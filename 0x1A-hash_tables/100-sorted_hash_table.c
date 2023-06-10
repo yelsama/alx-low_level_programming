@@ -93,3 +93,33 @@ void shash_table_print(const shash_table_t *ht)
 	}
 	printf("}\n");
 }
+
+/**
+ * shash_table_print_rev - check the code
+ * @ht: pointer to the hash table
+ */
+void shash_table_print_rev(const shash_table_t *ht)
+{
+	shash_node_t *tmp;
+	unsigned long int i = (*ht).size - 1;;
+	int	p_handle = 0;
+
+	if (!ht)
+		return;
+	printf("{");
+	while (i >= 0)
+	{
+		tmp = (*ht).array[i];
+		while (tmp)
+		{
+			if (p_handle++)
+				printf(", ");
+			printf("'%s': '%s'", (*tmp).key, (*tmp).value);
+			tmp = (*tmp).snext;
+		}
+		if (!i)
+			break;
+		i--;
+	}
+	printf("}\n");
+}
