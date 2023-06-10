@@ -121,3 +121,69 @@ void shash_table_print_rev(const shash_table_t *ht)
 	}
 	printf("}\n");
 }
+
+/**
+ * shash_table_get - check the code
+ * @ht: hash table pointer
+ * @key: a key to find the element
+ * Return: a vlue for a key or none
+ */
+char *shash_table_get(const shash_table_t *ht, const char *key)
+{
+	shash_node_t *tmp;
+	unsigned long int i;
+
+	if (!ht || !key || !key[0])
+		return (NULL);
+	i = key_index((const unsigned char *)(key), (*ht).size);
+	tmp = (*ht).array[i];
+	while (tmp)
+	{
+		if (!strcmp((*tmp).key, key))
+			return ((*tmp).value);
+		tmp = (*tmp).snext;
+	}
+	return (NULL);
+}
+
+/**
+ * free_list - free a list
+ * @head: holds the pointer to the first element
+ * Return: no thing
+ */
+void	free_list(shash_node_t *head)
+{
+	if (!head)
+		return;
+	free_list(head->next);
+	free(head->value);
+	head->value = NULL;
+	free(head->key);
+	head->key = NULL;
+	free(head);
+	head = NULL;
+}
+
+/**
+ * shash_table_delete - check the code
+ * @ht: pointer to the hash table
+ */
+void shash_table_delete(shash_table_t *ht)
+{
+	shash_node_t *tmp;
+	unsigned long int i = 0;
+
+	if (!ht)
+		return;
+	tmp = NULL;
+	while (i < (*ht).size)
+	{
+		tmp = (*ht).array[i];
+		free_list(tmp);
+		i++;
+	}
+	free((*ht).array);
+	(*ht).array = NULL;
+	free(ht);
+	ht = NULL;
+}
