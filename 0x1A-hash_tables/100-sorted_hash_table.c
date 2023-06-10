@@ -131,6 +131,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
 	shash_node_t *tmp;
+	shash_node_t *deep;
 	unsigned long int i;
 
 	if (!ht || !key || !key[0])
@@ -139,8 +140,13 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	tmp = (*ht).array[i];
 	while (tmp)
 	{
-		if (!strcmp((*tmp).key, key))
-			return ((*tmp).value);
+		deep = tmp;
+		while (deep)
+		{
+			if (!strcmp((*deep).key, key))
+				return ((*deep).value);
+			deep = (*deep).snext;
+		}
 		tmp = (*tmp).next;
 	}
 	return (NULL);
