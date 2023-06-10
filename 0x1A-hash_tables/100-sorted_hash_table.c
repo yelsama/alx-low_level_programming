@@ -101,11 +101,12 @@ void shash_table_print(const shash_table_t *ht)
 void shash_table_print_rev(const shash_table_t *ht)
 {
 	shash_node_t *tmp;
-	unsigned long int i = (*ht).size - 1;;
+	unsigned long int i;
 	int	p_handle = 0;
 
 	if (!ht)
 		return;
+	i = (*ht).size - 1;
 	printf("{");
 	while (i >= 0)
 	{
